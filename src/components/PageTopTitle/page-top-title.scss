@@ -1,0 +1,84 @@
+@import "../../styles/utils";
+@import "../../styles/variables";
+
+.page-top-title {
+  padding: 5em 0;
+  background-color: $light-bg;
+  position: relative;
+  @include for-mobile {
+    padding: 3em;
+  }
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    @include for-tablet {
+      font-size: 2rem;
+    }
+    @include for-mobile {
+      font-size: 1.5rem;
+    }
+    span {
+      color: $primary;
+    }
+  }
+  .abstract {
+    position: absolute;
+    @include for-mobile {
+      display: none;
+    }
+  }
+  .con {
+    position: relative;
+    .orange-hat {
+      width: 40px;
+      top: -4em;
+      left: 1vw;
+      @include for-tablet {
+        width: 30px;
+        left: 5vw;
+      }
+    }
+    .orange-plus {
+      width: 30px;
+      top: 4em;
+      left: 6vw;
+      @include for-tablet {
+        width: 20px;
+        left: 10vw;
+      }
+    }
+    .black-hat {
+      width: 40px;
+      top: -4em;
+      right: 1vw;
+      @include for-tablet {
+        width: 30px;
+        right: 5vw;
+      }
+    }
+    .black-plus {
+      width: 30px;
+      top: 4em;
+      right: 6vw;
+      @include for-tablet {
+        width: 20px;
+        right: 10vw;
+      }
+    }
+  }
+  .right {
+    right: 0;
+    top: 1vh;
+    @include for-tablet {
+      width: 50px;
+    }
+  }
+  .left {
+    left: 0;
+    top: 50%;
+    @include for-tablet {
+      top: 70%;
+      width: 50px;
+    }
+  }
+}

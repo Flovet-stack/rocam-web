@@ -10,12 +10,24 @@
     object-fit: cover;
     object-position: center;
     margin-bottom: 1em;
+    @include for-tablet {
+      height: 130px;
+    }
+    @include for-mobile {
+      margin-bottom: 0.5em;
+    }
   }
   h5 {
     font-size: 1.5rem;
     color: $text;
     font-weight: 600;
     margin-bottom: 0.5em;
+    @include for-tablet {
+      font-size: 1.1rem;
+    }
+    @include for-mobile {
+      margin-bottom: 0.2em;
+    }
   }
   .discover-button {
     display: flex;

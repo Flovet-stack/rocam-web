@@ -40,12 +40,38 @@
     border-bottom: 1px solid $primary;
     width: fit-content;
     padding-bottom: 0.3em;
+    margin-bottom: 1em;
     cursor: pointer;
     &:hover {
       gap: 1em;
     }
     img {
       width: 20px;
+    }
+  }
+  @include for-tablet {
+    padding: 1em;
+    > img {
+      height: 130px;
+    }
+    h5 {
+      font-size: 1.2rem;
+    }
+    .discover-button {
+      margin-left: 1em;
+    }
+  }
+  @include for-tablet {
+    padding: 1em;
+    > img {
+      height: 130px;
+    }
+    h5 {
+      font-size: 1.1rem;
+    }
+    .discover-button {
+      margin-left: 0;
+      font-size: 0.9rem;
     }
   }
 }

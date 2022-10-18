@@ -7,16 +7,29 @@ footer {
     padding: 3em 0;
     .con {
       display: flex;
+      @include for-mobile {
+        flex-direction: column;
+      }
       .left {
         width: 50%;
+        @include for-mobile {
+          width: 100%;
+          margin-bottom: 3em;
+        }
         .logo {
           width: 150px;
           margin-bottom: 1em;
+          @include for-tablet {
+            width: 120px;
+          }
         }
         p {
           color: $text;
           margin-bottom: 1em;
           width: 80%;
+          @include for-mobile {
+            width: 100%;
+          }
         }
         .social-icons {
           display: flex;
@@ -35,19 +48,35 @@ footer {
             &:hover {
               background-color: darken($primary, 10%);
             }
+            @include for-tablet {
+              width: 30px;
+              height: 30px;
+              font-size: 0.9rem;
+            }
           }
         }
       }
       .right {
         width: 50%;
         display: flex;
+        @include for-mobile {
+          width: 100%;
+          flex-direction: column;
+          gap: 3em;
+        }
         .sub {
           width: 50%;
+          @include for-mobile {
+            width: 100%;
+          }
           h6 {
             font-size: 1.1rem;
             color: $text;
             font-weight: 600;
             margin-bottom: 2em;
+            @include for-mobile {
+              margin-bottom: 1em;
+            }
           }
           ul {
             display: flex;
@@ -72,7 +101,6 @@ footer {
               justify-content: center;
               width: 30px;
               height: 30px;
-              cursor: pointer;
               background-color: $primary;
               border-radius: 50%;
               font-size: 0.7rem;
@@ -90,9 +118,18 @@ footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      @include for-mobile {
+        flex-direction: column;
+        gap: 1em;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
       p {
         font-size: 1rem;
         color: $text;
+        @include for-tablet {
+          font-size: 0.9rem;
+        }
         span {
           color: $primary;
         }
@@ -104,6 +141,10 @@ footer {
         cursor: pointer;
         &:hover {
           text-decoration: underline;
+        }
+        @include for-mobile {
+          font-size: 12px;
+          display: block;
         }
       }
     }

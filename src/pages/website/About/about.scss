@@ -1,0 +1,114 @@
+@import "../../../styles/utils";
+@import "../../../styles/variables";
+
+// about section styles
+.about-rocam {
+  width: 100%;
+  padding: 5em 0 3em 0;
+  position: relative;
+  @include for-mobile {
+    padding: 3em 0;
+  }
+  .con {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    @include for-mobile {
+      flex-direction: column;
+    }
+    .left {
+      width: 50%;
+      @include for-mobile {
+        width: 100%;
+      }
+      h2 {
+        font-size: 2.5em;
+        font-weight: 600;
+        line-height: 1.1;
+        color: $text;
+        @include for-tablet {
+          font-size: 2rem;
+        }
+        @include for-mobile {
+          font-size: 1.5rem;
+        }
+        span {
+          color: $primary;
+          font-weight: 700;
+        }
+      }
+      p {
+        margin: 2em 0;
+        color: $text;
+        @include for-tablet {
+          margin: 1em 0;
+        }
+      }
+      .custom-button {
+        font-size: 1rem;
+        span {
+          margin: 0 1rem;
+        }
+        @include for-tablet {
+          font-size: 0.9rem;
+        }
+        .icon {
+          width: 40px;
+          height: 40px;
+          @include for-tablet {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+    }
+    .right {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+      @include for-mobile {
+        width: 100%;
+      }
+      img {
+        width: auto;
+        max-height: 70vh;
+        max-width: 100%;
+        @include for-tablet {
+          max-height: 35vh;
+        }
+        &.abstract-icon {
+          position: absolute;
+          &.icon-3 {
+            left: -1em;
+            bottom: 3vh;
+            width: 50px;
+            @include for-tablet {
+              width: 40px;
+              left: 0;
+              bottom: 10em;
+            }
+          }
+          &.icon-4 {
+            right: -2vw;
+            top: 8vh;
+            width: 50px;
+            @include for-tablet {
+              width: 30px;
+              right: -2vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.about-partners {
+  width: 100%;
+  padding: 5em 0 3em 0;
+  position: relative;
+  @include for-mobile {
+    padding: 3em 0;
+  }
+}

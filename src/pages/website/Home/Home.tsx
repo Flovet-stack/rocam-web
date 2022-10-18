@@ -129,6 +129,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+
       {/* home cards  */}
       <div className="home-cards">
         <div className="con">

@@ -1,9 +1,20 @@
+@import "../../styles/utils";
+@import "../../styles/variables";
 .partners {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  @include for-mobile {
+    flex-wrap: wrap;
+  }
   img {
     width: auto;
     height: 60px;
+    @include for-tablet {
+      height: 40px;
+    }
+    @include for-mobile {
+      height: 30px;
+    }
   }
 }

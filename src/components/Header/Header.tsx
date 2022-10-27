@@ -35,7 +35,10 @@ const Header = () => {
   };
 
   const renderNavLink = (name: string, route: string) => (
-    <Link className={`${pathname === route ? "active" : ""}`} to={route}>
+    <Link
+      className={`nav-link ${pathname === route ? "active" : ""}`}
+      to={route}
+    >
       {name}
     </Link>
   );
@@ -50,12 +53,14 @@ const Header = () => {
               <li key={index}>{renderNavLink(link.name, link.route)}</li>
             ))}
             <li>
-              <CustomButton
-                text="Schools Involved"
-                icon={<FontAwesomeIcon icon={faGraduationCap} />}
-                skin="secondary"
-                type="button"
-              />
+              <Link to="/schools">
+                <CustomButton
+                  text="Schools Involved"
+                  icon={<FontAwesomeIcon icon={faGraduationCap} />}
+                  skin="secondary"
+                  type="button"
+                />
+              </Link>
             </li>
             <li>
               <CustomButton

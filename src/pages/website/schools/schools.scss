@@ -1,0 +1,17 @@
+@import "../../../styles/utils";
+@import "../../../styles/variables";
+
+.schools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  @include for-tablet {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2em;
+    column-gap: 1em;
+  }
+  @include for-mobile {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 1em;
+  }
+}

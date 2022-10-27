@@ -32,7 +32,7 @@ header.app-header {
         @include for-tablet {
           gap: 0.5em;
         }
-        a {
+        .nav-link {
           color: $text;
           display: block;
           padding: 0.5em;

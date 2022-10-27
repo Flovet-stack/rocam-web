@@ -7,6 +7,7 @@ header.app-header {
   height: auto;
   @include for-mobile {
     padding: 0.5em 0;
+    height: 40px;
   }
   position: fixed;
   top: 0;
@@ -48,6 +49,7 @@ header.app-header {
             background-color: $primary;
             transition-duration: 0.3s;
           }
+          &.active,
           &:hover {
             color: $primary;
             &::after {
@@ -73,7 +75,7 @@ header.app-header {
         position: fixed;
         background-color: $white;
         left: 0;
-        top: 46px;
+        top: 40px;
         width: 100%;
         height: calc(100vh - 42px);
         display: grid;

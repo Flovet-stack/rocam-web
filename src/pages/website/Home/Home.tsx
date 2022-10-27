@@ -144,7 +144,7 @@ const Home = () => {
       </div>
 
       {/* home about section  */}
-      <div className="home-about">
+      <div className="page-section home-about">
         <div className="con">
           <div className="left">
             <h2>
@@ -181,7 +181,7 @@ const Home = () => {
       </div>
 
       {/* home schools section  */}
-      <div className="home-schools">
+      <div className="page-section home-schools">
         <div className="con">
           <div className="section-title">
             <h2>
@@ -204,7 +204,7 @@ const Home = () => {
       </div>
 
       {/* partners section  */}
-      <div className="home-partners">
+      <div className="page-section home-partners">
         <div className="con">
           <Partners />
         </div>
@@ -214,7 +214,7 @@ const Home = () => {
       <Jumbotron />
 
       {/* home news section  */}
-      <div className="home-news">
+      <div className="page-section home-news">
         <div className="con">
           <div className="section-title">
             <h2>

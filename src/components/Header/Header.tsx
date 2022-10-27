@@ -1,6 +1,6 @@
 import "./header.scss";
 import logo from "../../assets/logos/rocam-logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import CustomButton from "../CustomButton/CustomButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,10 +13,32 @@ import { useState } from "react";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const { pathname } = useLocation();
+
+  const navigationLinks = [
+    {
+      name: "home",
+      route: "/",
+    },
+    {
+      name: "about",
+      route: "/about",
+    },
+    {
+      name: "news",
+      route: "/news",
+    },
+  ];
 
   const handleToggler = () => {
     setShowMenu(!showMenu);
   };
+
+  const renderNavLink = (name: string, route: string) => (
+    <Link className={`${pathname === route ? "active" : ""}`} to={route}>
+      {name}
+    </Link>
+  );
 
   return (
     <header className="app-header">
@@ -24,15 +46,9 @@ const Header = () => {
         <img src={logo} alt="ROCAM logo" className="logo" />
         <nav className={`${showMenu ? "" : "hide"}`}>
           <ul>
-            <li>
-              <Link to={"/"}>Home</Link>
-            </li>
-            <li>
-              <Link to={"/about"}>About</Link>
-            </li>
-            <li>
-              <Link to={"/news"}>News</Link>
-            </li>
+            {navigationLinks.map((link, index) => (
+              <li key={index}>{renderNavLink(link.name, link.route)}</li>
+            ))}
             <li>
               <CustomButton
                 text="Schools Involved"

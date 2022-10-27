@@ -1,17 +1,42 @@
-import { Jumbotron, PageTopTitle, Partners } from "../../../components";
+import {
+  Jumbotron,
+  PageTopTitle,
+  Partners,
+  TeamMemberCard,
+} from "../../../components";
 import WebsiteLayout from "../../../components/layouts/WebsiteLayout/WebsiteLayout";
 import aboutImage from "../../../assets/images/home-about-image.png";
 import iconOrangeHeart from "../../../assets/icons/orange-hat.svg";
 import iconBlackPlus from "../../../assets/icons/grey-times.svg";
 import "./about.scss";
+import { ReactNode } from "react";
+import { aboutCardInfo, teamMembers } from "./data";
+
+interface aboutCardProps {
+  icon: ReactNode;
+  title: string;
+  text: string;
+}
 
 const About = () => {
+  const AboutCard = (props: aboutCardProps) => {
+    return (
+      <div className="about-card">
+        {props.icon}
+        <h4>
+          our <span>{props.title}</span>
+        </h4>
+        <p>{props.text}</p>
+      </div>
+    );
+  };
+
   return (
     <WebsiteLayout>
       <PageTopTitle text="About" coloredText="ROCAM" />
 
-      {/* home about section  */}
-      <div className="about-rocam">
+      {/* about section  */}
+      <div className="page-section about-rocam">
         <div className="con">
           <div className="left">
             <h2>
@@ -51,7 +76,20 @@ const About = () => {
         </div>
       </div>
 
-      <div className="about-partners">
+      <div className="page-section about-cards">
+        <div className="con">
+          {aboutCardInfo.map((card, index) => (
+            <AboutCard
+              key={index}
+              icon={card.icon}
+              title={card.title}
+              text={card.text}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="page-section about-partners">
         <div className="con">
           <div className="section-title">
             <h2>
@@ -64,6 +102,22 @@ const About = () => {
 
       {/* become a partner section  */}
       <Jumbotron />
+
+      {/* team  */}
+      <div className="page-section about-partners">
+        <div className="con">
+          <div className="section-title">
+            <h2>
+              Our <span>Team</span>
+            </h2>
+          </div>
+          <div className="team-members">
+            {teamMembers.map((member, index) => (
+              <TeamMemberCard key={index} data={member} />
+            ))}
+          </div>
+        </div>
+      </div>
     </WebsiteLayout>
   );
 };

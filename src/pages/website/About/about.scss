@@ -4,7 +4,6 @@
 // about section styles
 .about-rocam {
   width: 100%;
-  padding: 5em 0 3em 0;
   position: relative;
   @include for-mobile {
     padding: 3em 0;
@@ -106,9 +105,57 @@
 
 .about-partners {
   width: 100%;
-  padding: 5em 0 3em 0;
   position: relative;
   @include for-mobile {
     padding: 3em 0;
+  }
+}
+
+.about-cards {
+  .con {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    @include for-tablet {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2em;
+    }
+    @include for-mobile {
+      gap: 1em;
+    }
+  }
+  .about-card {
+    border-radius: 8px;
+    background-color: $light-bg;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    img {
+      width: 40px;
+    }
+    h4 {
+      font-size: 2rem;
+      font-weight: 600;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+    span {
+      color: $primary;
+    }
+  }
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  @include for-tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+  }
+  @include for-tablet {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

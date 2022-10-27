@@ -1,6 +1,5 @@
 import "./information-card.scss";
 import arrowOrangeRight from "../../assets/icons/arrow_forward_orange.svg";
-
 export interface InformationCarProps {
   image: string;
   text: string;
